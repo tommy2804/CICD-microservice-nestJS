@@ -1,0 +1,13 @@
+version: 0.2
+
+phrases:
+  pre_build:
+    commands:
+      - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 350210975863.dkr.ecr.eu-north-1.amazonaws.com
+  build:
+    commands:
+      - docker build -t workouts -f ./apps/workouts/Dockerfile .
+      - docker tag workouts:latest 350210975863.dkr.ecr.eu-north-1.amazonaws.com/workouts:latest
+  post_build:
+    commands:
+      - docker push 350210975863.dkr.ecr.eu-north-1.amazonaws.com/workouts:latest
