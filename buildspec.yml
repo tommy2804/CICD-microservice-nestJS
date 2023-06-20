@@ -10,4 +10,4 @@ phrases:
       - docker tag workouts:latest 350210975863.dkr.ecr.eu-north-1.amazonaws.com/workouts:latest
   post_build:
     commands:
-      - docker push 350210975863.dkr.ecr.eu-north-1.amazonaws.com/workouts:latest
+      # - docker push 350210975863.dkr.ecr.eu-north-1.amazonaws.com/workouts:latest
